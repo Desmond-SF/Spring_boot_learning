@@ -69,4 +69,14 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
         theQuery.setParameter("employeeID", id);
         theQuery.executeUpdate();
     }
+
+    @Override
+    public Employee findByEmail(String email) {
+        Session currentSession = entityManager.unwrap(Session.class);
+
+        // get the employee and return
+        Employee theEmployee = currentSession.get(Employee.class, email);
+
+        return theEmployee;
+    }
 }

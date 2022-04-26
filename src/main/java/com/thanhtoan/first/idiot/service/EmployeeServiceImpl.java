@@ -43,4 +43,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeDAO.deleteById(id);
     }
 
+    @Override
+    public Employee findByEmail(String email) {
+        // TODO Auto-generated method stub
+        return employeeDAO.findByEmail(email);
+    }
+
 }

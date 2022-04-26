@@ -3,6 +3,7 @@ package com.thanhtoan.first.idiot.controller;
 import java.util.List;
 
 import com.thanhtoan.first.idiot.service.EmployeeService;
+import com.thanhtoan.first.idiot.configuration.RestConfiguration;
 import com.thanhtoan.first.idiot.entity.Employee;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 // import org.springframework.web.bind.annotation.RequestMapping;
+// import org.springframework.web.bind.annotation.RestController;
 // import org.springframework.web.bind.annotation.RestController;
 
 @Controller
@@ -45,6 +47,12 @@ public class EmployeeRestController {
     public String showSignUpForm(Model model) {
         model.addAttribute("user", new Employee());
         return "signup_form.html";
+    }
+
+    @PostMapping("/process_register")
+    public String processRegistration(Employee user) {
+        employeeService.save(user);
+        return "register_success.html";
     }
     // // Login form  
     // @RequestMapping("/login.html")  
