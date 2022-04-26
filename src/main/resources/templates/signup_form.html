@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div id="container text-center">
+        <div>
+            <h2>Registration page</h2>
+        </div>
+        <form th:action="@{/process_register}" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" autofocus="autofocus" />
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" />
+            <input id="submit" type="submit" value="Log in" />
+        </form>
+        <p th:if="${loginError}" class="error">Wrong user or password</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- <html lang="en" dir="ltr"> -->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="ISO-8859-1">
+  <title> 🖤 Toan Nguyen's first website</title>
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <hr>
+    <table cellspacing="20">
+      <tr>
+        <td><img th:src="@{Image/Toan_picture.png}" alt="Toan Portrait" width="200" height="200" /></td>
+        <td>
+          <h1>Toan Nguyen</h1>
+          <h3>Software developer</h3>
+          <p><i>Dob: Feb 4th 1995</i></p>
+        </td>
+      </tr>
+    </table>
+    <hr>
+    <h3>Infomation</h3>
+    <ul>
+      <li>Stupid</li>
+      <li>Idiot</li>
+    </ul>
+    <h3>Work Experience</h3>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Work</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>2017-2019</td>
+        <td>Work at RVC</td>
+      </tr>
+      <tr>
+        <td>2020-now</td>
+        <td>Work at DEK</td>
+      </tr>
+    </table>
+    <h3>Skills</h3>
+    <table>
+      <tr>
+        <td>C/C++</td>
+        <td>⭐⭐⭐⭐⭐</td>
+        <td>Sport</td>
+        <td>⭐⭐</td>
+        <td>Web</td>
+        <td>⭐⭐</td>
+        <td>Kungfu</td>
+        <td>⭐⭐⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+      </tr>
+
+    </table>
+    <hr>
+    <a th:href="@{hobbies.html}">My hobbies</a>
+    <br>
+    <a th:href="@{contact-me.html}">Contact me</a>
+    <hr>
+    <div>
+      <a th:href="@{/login}">Login</a>
+    </div>
+    <br>
+    <div>
+      <a th:href="@{/register}">Need an account? Register</a>
+    </div>
+  </div>
+</body>
+
+</html>
