@@ -73,10 +73,18 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
     @Override
     public Employee findByEmail(String email) {
         Session currentSession = entityManager.unwrap(Session.class);
-
+        System.out.println("BUG HAHAHAHAHAHHA");
         // get the employee and return
-        Employee theEmployee = currentSession.get(Employee.class, email);
-
-        return theEmployee;
+        Query<Employee> theQuery = currentSession.createQuery("from Employee", Employee.class);
+        // execute query and get result List
+        List<Employee> employees = theQuery.getResultList();
+        for (Employee employee : employees) {
+            System.out.println("HOHO  " + employee.getEmail());
+            System.out.println("HOHO 2 " + email);
+            if (employee.getEmail().equals(email)) {
+                return employee;
+            }
+        }
+        return null;
     }
 }

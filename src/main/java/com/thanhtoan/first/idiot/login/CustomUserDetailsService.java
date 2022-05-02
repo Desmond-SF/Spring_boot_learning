@@ -1,4 +1,4 @@
-package login;
+package com.thanhtoan.first.idiot.login;
 
 import com.thanhtoan.first.idiot.entity.Employee;
 import com.thanhtoan.first.idiot.service.EmployeeService;

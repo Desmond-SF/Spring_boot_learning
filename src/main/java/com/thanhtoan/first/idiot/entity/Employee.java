@@ -57,7 +57,7 @@ public class Employee {
         this.email = email;
     }
 
-    @Column(name = "pass_word") //, length = 45
+    @Column(name = "pass_word", length = 64) //, 
     private String passWord;
 
     public String getPassWord() {
